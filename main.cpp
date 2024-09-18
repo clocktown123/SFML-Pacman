@@ -1,5 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include "Player.h"
+#include "Level.h"
 using namespace sf;
 
 void handleInput(Player& player, float deltaTime);
@@ -10,9 +11,9 @@ int main() {
 	RenderWindow window(VideoMode(800, 600), "Pacman");
 
 	//Instiantate game objects
-	//RenderWindow window(VideoMode(800, 600), "Pacman Game");
 	Player player;
 	Clock clock;
+	Level level;
 
 	//Zone Game Loop#########################################################
 	while (window.isOpen()) {
@@ -32,6 +33,7 @@ int main() {
 		window.clear(); // clear screen
 
 		player.draw(window);
+		level.draw(window);
 
 		window.display();//update the windo
 
