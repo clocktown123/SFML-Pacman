@@ -8,6 +8,7 @@ public:
 	Player();//constructor
 	void move(float deltaX, float deltaY); // moves the player
 	void draw(RenderWindow& window); // draws the player
+	//void update(float deltaTime, const Level& level);
 
 private:
 	CircleShape shape; // shape represents the player
