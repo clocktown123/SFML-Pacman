@@ -4,6 +4,7 @@
 using namespace sf;
 
 void handleInput(Player& player, float deltaTime);
+//void collisionCheck(float px, float py, int levelData);
 
 
 int main() {
@@ -28,14 +29,15 @@ int main() {
 
 		//Handle player input for movement
 		handleInput(player, deltaTime);
+		//collisionCheck();
 
 		//RENDER section------------------------------------------------------------
 		window.clear(); // clear screen
 
-		player.draw(window);
 		level.draw(window);
+		player.draw(window);
 
-		window.display();//update the windo
+		window.display();//update the window
 
 
 	}//end of game loop###########################################################
@@ -53,3 +55,13 @@ void handleInput(Player& player, float deltaTime) {
 	if (Keyboard::isKeyPressed(Keyboard::Up)) player.move(0, -speed * deltaTime); // move Up
 	if (Keyboard::isKeyPressed(Keyboard::Down)) player.move(0, speed * deltaTime); // move Down
 }
+
+//bool checkCollision(float px, float py, int levelData) {
+	// Check if the coordinates are within bounds
+	//if (px < 0 || px >= 800 || py < 0 || py >= 600) {
+		//return true; // Out of bounds
+	//}
+
+	// Return true if the cell is not walkable (1 indicates an obstacle)
+	//return levelData[py][px] == 1;
+//}
